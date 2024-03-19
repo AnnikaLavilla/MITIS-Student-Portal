@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <link rel="stylesheet" href="Portal_Profile.css">
+</head>
+<body>
+
+<div class="banner">
+    <img src="Web Banner.png" alt="Banner Image">
+</div>
+
+<div class="container">
+    <h2>Student Profile</h2>
+
+    <div class="profile-info">
+        <div class="avatar">
+            <img src="profile_pic.jpg" alt="Profile Picture">
+        </div>
+        <div class="details">
+            <p><strong>Name:</strong> Lavilla, Annika Julia B.</p>
+            <p><strong>Email:</strong> ajlavilla@mitis.edu.ph</p>
+            <p><strong>Grade:</strong> 12</p>
+            <p><strong>School-Year:</strong> 2023-2024</p>
+            <p><strong>Student ID:</strong> 12-00***</p>
+        </div>
+    </div>
+    <a href="edit_profile.php" class="edit-profile">Edit Profile</a>
+
+    <div class="section">
+        <h3 class="toggle">Grades<span class="arrow">▼</span></h3>
+        <div class="content hidden"> <!-- Initially hide the content -->
+            <!-- Add content to display grades -->
+            <p><strong>First Semester:</strong></p>
+            <p>English (AP Language and Composition):</p>
+            <p>Science (AP Chemistry):</p>
+            <p>Math (AP Pre-Calculus):</p>
+            <p>Social Studies (AP Modern World History):</p>
+            <p>Foreign Language (German):</p>
+            <p>Elective 1 (Digital Communications):</p>
+            <p>Elective 2 (International Business Studies):</p>
+            <br>
+            <p><strong>Second Semester:</strong></p>
+            <p>English (AP Language and Composition):</p>
+            <p>Science (AP Chemistry):</p>
+            <p>Math (AP Pre-Calculus):</p>
+            <p>Social Studies (AP Modern World History):</p>
+            <p>Foreign Language (German):</p>
+            <p>Elective 1 (Digital Communications):</p>
+            <p>Elective 2 (International Business Studies):</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3 class="toggle">Attendance<span class="arrow">▼</span></h3>
+        <div class="content hidden"> <!-- Initially hide the content -->
+            <!-- Add content to display attendance records -->
+            <p><strong>1st Semester:</strong> 100%</p>
+            <p><strong>2nd Semester:</strong> on going</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3 class="toggle">School Records<span class="arrow">▼</span></h3>
+        <div class="content hidden"> <!-- Initially hide the content -->
+            <!-- Add content to display school records -->
+            <p><strong>Conduct:</strong></p>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const toggles = document.querySelectorAll('.toggle');
+
+        toggles.forEach(toggle => {
+            toggle.addEventListener('click', function () {
+                const content = this.nextElementSibling;
+                content.classList.toggle('hidden'); // Toggle the 'hidden' class
+                const arrow = this.querySelector('.arrow');
+                arrow.textContent = content.classList.contains('hidden') ? '▼' : '▲';
+            });
+        });
+    });
+</script>
+
+<nav>
+    <img src="paw.png" alt="paw">
+    <a href="Portal_Homepage.html"><img src="homebutton.png" alt="homebutton"></a>
+    <a href="Portal_Directory_Contact.html"><img src="directorylogo.png" alt="directory"></a>
+    <a href="Portal_Schedule.html"><img src="schedulebutton.png" alt="schedule"></a>
+    <a href="Portal_Profile.html"><img src="profilebutton.png" alt="profile"></a>
+    <a href="Portal_Login.html"><img src="logoutbutton.png" alt="Logout"></a>
+</nav>
+
+</body>
+</html>

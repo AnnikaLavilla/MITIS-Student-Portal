@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Portal</title>
+    <link rel="stylesheet" href="Portal_Schedule.css">
+</head>
+
+<div class="banner">
+    <img src="Web Banner.png" alt="Banner Image">
+</div>
+
+<nav>
+
+    <img src="paw.png" alt="paw">
+    
+        <a href="Portal_Homepage.html"><img src ="homebutton.png" alt="homebutton" ></a>
+        <a href="Portal_Directory_Contact.html"><img src ="directorylogo.png" alt="directory" ></a>
+        <a href="Portal_Schedule.html"><img src ="schedulebutton.png" alt="schedule" ></a>
+        <a href="Portal_Profile.html"><img src ="profilebutton.png" alt="profile" ></a>
+        <a href="Portal_Login.html"><img src="logoutbutton.png" alt="Logout"></a>
+    </nav>
+
+<body>
+    <main>
+        <section id="calendar">
+            <h2>Weekly Calendar</h2>
+            <div id="editable-calendar">
+
+            </div>
+        </section>
+        <section id="schedule">
+            <h2>Class Schedule</h2>
+            <p>Monday and Tuesday: Orange Time <br><br> Wednesday-Friday: Gray Time </p>
+            <div id="editable-schedule">
+
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+    <script src="schedule_script.js"></script> 
+</body>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // calendar div
+    var editableCalendar = document.getElementById('editable-calendar');
+
+    // 7 day calendar
+    for (var i = 0; i < 7; i++) {
+        var date = new Date();
+        date.setDate(date.getDate() + i);
+        var day = date.toLocaleDateString('en-US', { weekday: 'long' });
+        var dateString = date.toLocaleDateString('en-US');
+
+        // Create an input field for each day
+        var input = document.createElement('input');
+        input.type = 'text';
+        input.placeholder = day + ' (' + dateString + ')';
+        input.setAttribute('data-date', dateString);
+        input.classList.add('calendar-input');
+        
+        // Append the input field to the editable calendar div
+        editableCalendar.appendChild(input);
+    }
+});
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    // Get the editable schedule div
+    var editableSchedule = document.getElementById('editable-schedule');
+
+  var classSessions = [
+    { day: 'Monday', time: '8:00 AM - 8:30 AM', subject: 'Morning Assembly' },
+    { day: 'Monday', time: '8:30 AM - 9:20 AM', subject: 'Science: AP Chemistry' },
+    { day: 'Monday', time: '9:30 AM - 10:20 AM', subject: 'Social Studies: AP World Modern History' },
+    { day: 'Monday', time: '10:30 AM - 11:20 AM', subject: 'Social Studies: AP World Modern History' },
+    { day: 'Monday', time: '11:20 AM - 12:00 PM', subject: 'Lunch' },
+    { day: 'Monday', time: '12:00 PM - 12:50 PM', subject: 'English: AP Languange and Composition' },
+    { day: 'Monday', time: '1:00 PM - 2:00 PM', subject: 'Math: AP Pre-Calculus' },
+    { day: 'Monday', time: '2:00 PM - 3:00 PM', subject: 'Elective 2: International Business Studies' },
+    
+    { day: 'Tuesday', time: '8:00 AM - 8:30 AM', subject: 'Character Education' },
+    { day: 'Tuesday', time: '8:30 AM - 9:20 AM', subject: 'Science: AP Chemistry' },
+    { day: 'Tuesday', time: '9:30 AM - 10:20 AM', subject: 'Elective 1: Digital Communications' },
+    { day: 'Tuesday', time: '10:30 AM - 11:20 AM', subject: 'Foreign Language' },
+    { day: 'Tuesday', time: '11:20 AM - 12:00 PM', subject: 'Lunch' },
+    { day: 'Tuesday', time: '12:00 PM - 12:50 PM', subject: 'English: AP Languange and Composition' },
+    { day: 'Tuesday', time: '1:00 PM - 2:00 PM', subject: 'Math: AP Pre-Calculus' },
+    { day: 'Tuesday', time: '2:00 PM - 3:00 PM', subject: 'Elective 2: International Business Studies' },
+
+    { day: 'Wednesday', time: '8:00 AM - 8:10 AM', subject: 'Homeroom' },
+    { day: 'Wednesday', time: '8:10 AM - 9:00 AM', subject: 'Science: AP Chemistry' },
+    { day: 'Wednesday', time: '9:10 AM - 10:00 AM', subject: 'Social Studies: AP World Modern History' },
+    { day: 'Wednesday', time: '10:10 AM - 11:00 AM', subject: 'Social Studies: AP World Modern History' },
+    { day: 'Wednesday', time: '11:00 AM - 12:00 PM', subject: 'Lunch' },
+    { day: 'Wednesday', time: '12:00 PM - 12:50 PM', subject: 'English: AP Languange and Composition' },
+    { day: 'Wednesday', time: '1:00 PM - 2:00 PM', subject: 'Math: AP Pre-Calculus' },
+    { day: 'Wednesday', time: '2:00 PM - 3:00 PM', subject: 'Elective 2: International Business Studies' },
+
+    { day: 'Thursday', time: '8:00 AM - 8:10 AM', subject: 'Homeroom' },
+    { day: 'Thursday', time: '8:10 AM - 9:00 AM', subject: 'Elective 1: Digital Communications' },
+    { day: 'Thursday', time: '9:10 AM - 10:00 AM', subject: 'Elective 1: Digital Communications' },
+    { day: 'Thursday', time: '10:10 AM - 11:00 AM', subject: 'Foreign Language: German' },
+    { day: 'Thursday', time: '11:00 AM - 12:00 PM', subject: 'Lunch' },
+    { day: 'Thursday', time: '12:00 PM - 12:50 PM', subject: 'Math: AP Pre-Calculus' },
+    { day: 'Thursday', time: '1:00 PM - 2:00 PM', subject: 'Math: AP Pre-Calculus' },
+    { day: 'Thursday', time: '2:00 PM - 3:00 PM', subject: 'Elective 2: International Business Studies' },
+
+
+    { day: 'Friday', time: '8:00 AM - 8:10 AM', subject: 'Homeroom' },
+    { day: 'Friday', time: '8:10 AM - 9:00 AM', subject: 'Science: AP Chemistry' },
+    { day: 'Friday', time: '9:10 AM - 10:00 AM', subject: 'Science: AP Chemistry' },
+    { day: 'Friday', time: '10:10 AM - 11:00 AM', subject: 'Elective 1: Digital Communications' },
+    { day: 'Friday', time: '11:00 AM - 12:00 PM', subject: 'Lunch' },
+    { day: 'Friday', time: '12:00 PM - 12:50 PM', subject: 'English: AP Languange and Composition' },
+    { day: 'Friday', time: '1:00 PM - 2:00 PM', subject: 'English: AP Languange and Composition' },
+    { day: 'Friday', time: '2:00 PM - 3:00 PM', subject: 'Study Period' },
+
+];
+
+
+    // Generate input fields for each class session
+    classSessions.forEach(function (session) {
+        var sessionDiv = document.createElement('div');
+        sessionDiv.classList.add('class-session');
+
+        var sessionInfo = document.createElement('p');
+        sessionInfo.textContent = session.day + ' ' + session.time + ' - ' + session.subject;
+
+        var input = document.createElement('input');
+        input.type = 'text';
+        input.placeholder = 'Add notes or additional details...';
+
+var clearButton = document.createElement('button');
+        clearButton.textContent = 'Clear';
+        clearButton.addEventListener('click', function() {
+            input.value = ''; // Clear the input field when the button is clicked
+        });
+
+        sessionDiv.appendChild(sessionInfo);
+        sessionDiv.appendChild(input);
+        sessionDiv.appendChild(clearButton);
+        editableSchedule.appendChild(sessionDiv);
+    });
+
+});
+
+</script>
+
+</html>

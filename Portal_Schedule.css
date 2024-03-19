@@ -1,0 +1,106 @@
+.banner { /*Main Banner*/
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+img {
+    max-width: 100%; /* Adjust the maximum width of the images */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin: 10px; /* Adjust margin */
+}
+
+nav img {
+    width: 80%; /* Adjust the width of the logo */
+}
+
+nav a img {
+    width: 80%; /* Adjust the width of the images inside the navigation links */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    }
+
+nav {
+    background-color: #823302;
+    padding: 10px;
+    position: fixed;
+    left: 0;
+    top: 0;
+        height: 100%;
+        width: 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        padding: 5px; 
+        margin: 10px 0; /* Adjust margin */
+        width: 80px; /* Adjust width of navigation links */
+        color: #fff;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+    nav a:hover {
+            background-color: #4d1d00;
+    }
+
+/* Main content area */
+main {
+    padding: 30px;
+    margin-left: 80px; /* Adjusted to match the width of the navigation bar */
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Calendar Styles */
+#calendar {
+    margin-bottom: 20px;
+}
+
+/* Schedule Styles */
+#schedule {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+}
+
+/* Calendar and Schedule Item Styles */
+.item {
+    margin-bottom: 10px;
+}
+
+.item label {
+    font-weight: bold;
+}
+
+.item input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.item textarea {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}

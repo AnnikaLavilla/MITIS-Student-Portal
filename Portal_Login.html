@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MITIS Student Portal - Login</title>
+    <link rel="stylesheet" href="Portal_Login.css">    
+</head>
+<body>
+    <div class="container">
+        <img src="Weblogo.png" alt="Logo">
+        <form action="login.php" method="POST" id="login-form">
+            <input type="text" name="username" id="email" placeholder="Username or Email" required>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <input type="checkbox" id="remember_me" name="remember_me"> <span>Remember Me</span><br>
+            <label for="remember_me"></label>
+            <input type="submit" value="Login" class="submit-btn">
+            <div class="forgot-password">
+                <a href="forgot_password.php">Forgot Password?</a>
+            </div>
+            <div class="register-link">
+                Don't have an account? <a href="Create.php">Create Account</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            auth(); // Call the authentication function
+        });
+
+        function auth(){
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            if(email === "ajlavilla@mitis.edu.ph" && password === "admin123"){
+                alert("Login Successfully");
+                window.location.assign("Portal_Homepage.html"); // Redirect to the homepage
+            } else {
+                alert("Invalid Information");
+            }
+        }
+    </script>
+</body>
+</html>

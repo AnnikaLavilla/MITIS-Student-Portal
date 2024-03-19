@@ -1,0 +1,80 @@
+.banner { /*Main Banner*/
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+img {
+    max-width: 100%; /* Adjust the maximum width of the images */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin: 10px; /* Adjust margin */
+}
+
+nav img {
+    width: 80%; /* Adjust the width of the logo */
+}
+
+nav a img {
+    width: 80%; /* Adjust the width of the images inside the navigation links */
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-left: 80px; 
+    background-color: #f4f4f4;
+    }
+
+nav {
+    background-color: #823302;
+    padding: 10px;
+    position: fixed;
+    left: 0;
+    top: 0;
+        height: 100%;
+        width: 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        padding: 5px; 
+        margin: 10px 0; /* Adjust margin */
+        width: 80px; /* Adjust width of navigation links */
+        color: #fff;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+    nav a:hover {
+            background-color: #4d1d00;
+    }
+
+.directory {
+    width: 80%;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+.section {
+    margin-bottom: 20px;
+}
+.section h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+.contact-list {
+    list-style: none;
+    padding: 0;
+}
+.contact-item {
+    margin-bottom: 5px;
+}
+.contact-item span {
+    font-weight: bold;
+}

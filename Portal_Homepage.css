@@ -1,0 +1,96 @@
+.banner { /*Main Banner*/
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+img {
+    max-width: 100%; /* Adjust the maximum width of the images */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin: 10px; /* Adjust margin */
+}
+
+nav img {
+    width: 80%; /* Adjust the width of the logo */
+}
+
+nav a img {
+    width: 80%; /* Adjust the width of the images inside the navigation links */
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    }
+
+nav {
+    background-color: #823302;
+    padding: 10px;
+    position: fixed;
+    left: 0;
+    top: 0;
+        height: 100%;
+        width: 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        padding: 5px; 
+        margin: 10px 0; /* Adjust margin */
+        width: 80px; /* Adjust width of navigation links */
+        color: #fff;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+    nav a:hover {
+            background-color: #4d1d00;
+    }
+
+    .box-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    
+    .box {
+        width: calc(14.28% - 20px); /* Adjust the width of each box */
+        background-color: #fff; /* Adjust background color */
+        height: 100px; /* Adjust height of each box */
+        margin-bottom: 20px; /* Adjust margin between boxes */
+        box-sizing: border-box;
+        border: 1px solid #ccc; /* Add border for clarity */
+        border-radius: 10px; /* Add border-radius for rounded corners */
+        color: #333; /* Adjust text color */
+        text-align: center; /* Adjust text alignment */
+        line-height: 100px; /* Adjust line height for vertical centering */
+        font-size: 18px; /* Adjust font size */
+    }
+
+    section {
+        padding: 20px;
+        margin-left: 210px;
+    }
+
+    footer {
+        background-color: #bd9982;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+a{
+    margin-left:30px;
+}
